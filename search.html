@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="search.css">
+</head>
+<body>
+    <h1>All your favorite movies at one Destination</h1>
+    <div id="search">
+        
+        <!-- <input oninput="movie()"  id="query" placeholder="Search Movies"> -->
+        <input oninput="debounce(movie,500)"  id="query" placeholder="Search Movies">
+        <!-- <button  onclick="movie()">Search Movies</button> -->
+    </div>
+    <div id="container"></div>
+</body>
+</html>
+<script src="search.js"></script>

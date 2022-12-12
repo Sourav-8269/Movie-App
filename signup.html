@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #main>img{
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 20%;
+        }
+        #main{
+            /* width: 70%; */
+            margin: auto;
+            justify-content: center;
+            /* font-family: Arial, Helvetica, sans-serif; */
+            font-family: 'Baloo 2', cursive;    
+            /* box-shadow: rgba(255, 255, 255, 0.2) 0px 0px 0px 1px inset, rgba(0, 0, 0, 0.9) 0px 0px 0px 1px; */
+            /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+        }
+        h1,h3{
+            text-align: center;
+            color:#5dc6ad;
+        }
+        label{
+            font-size: 20px;
+        }
+        form{
+            width:40%;
+            /* padding-top: 40px; */
+            /* display: flex; */
+            /* border: 1px solid red; */
+            margin: auto;
+            padding-left: 100px;
+        }
+        input{
+            margin-bottom: 20px;
+            width:80%;
+            padding:3%;
+            /* margin-top: 10px; */
+            background-color: teal;
+            border: none;
+            border-radius: 10px;
+            color: black;
+            font-size: 25px;
+        }
+        input[type="submit"]{
+            width:85%;
+            color: white;
+        }
+        input::placeholder{
+            color: white;
+            font-size: 25px;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+
+        <img src="https://webasset.fraazo.com/production/b70a67f4e825e3d388ac4466952c20a8.svg" alt="">
+        <h1>Sign Up</h1>
+        <form>
+            <label for="">Email</label><br>
+            <input type="text" name="" id="email" placeholder="Enter Your Email"><br>
+            <label >Phone Number</label><br>
+            <input type="number"  id="number" placeholder="Enter Your Number"><br>
+            <label >Password </label><br>
+            <input id="pass" placeholder="Enter Your Password"><br>
+            <input type="submit">
+        </form>
+    </div>
+    
+</body>
+</html>
+<script>
+    // localStorage.clear();
+    let data_arr=JSON.parse(localStorage.getItem("signup"))||[];
+    document.querySelector("form").addEventListener("submit",data);
+    function data(){
+        event.preventDefault();
+        let obj={
+            email:document.querySelector("#email").value,
+        // console.log(email)
+        number:document.querySelector("#number").value,
+        // console.log(number)
+        password:document.querySelector("#pass").value
+        // console.log(password)
+
+        }
+        console.log(obj)
+        data_arr.push(obj);
+        localStorage.setItem("signup",JSON.stringify(data_arr));
+        window.location.href="signin.html";
+    }
+</script>
